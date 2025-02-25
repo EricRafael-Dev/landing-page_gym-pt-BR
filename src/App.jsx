@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="relative w-dvw bg-[#5F2BAA] border-t-5 border-[#F97316]">
       <img
-        className="absolute h-[40dvh] top-0 object-cover"
+        className="absolute w-dvw h-[40dvh] top-0 object-cover"
         src="https://img.freepik.com/fotos-premium/composicao-da-parte-inferior-de-pessoas-na-academia-correndo-na-esteira-com-fundo-laranja_1134-9081.jpg"
         alt=""
       />
