@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from "react";
 
-const Forms = forwardRef(({sectionRef}) => {
+const Forms = forwardRef(({ sectionRef }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [value, setValue] = useState({
     nome: "",
@@ -20,7 +20,6 @@ const Forms = forwardRef(({sectionRef}) => {
   const handleChange = (e) => {
     setValue({ ...value, [e.target.id]: e.target.value });
   };
-  console.log(sectionRef)
   return (
     <div
       ref={sectionRef}
@@ -108,7 +107,6 @@ const Forms = forwardRef(({sectionRef}) => {
           className="bg-[#F97316] h-12 rounded-xl uppercase font-bold text-white"
           onClick={() => {
             handleSubmit();
-            console.log(isSubmitted);
           }}
         >
           Baixar kit grátis agora!

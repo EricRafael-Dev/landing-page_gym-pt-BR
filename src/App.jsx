@@ -6,12 +6,11 @@ const App = () => {
   const sectionRef = useRef(null);
 
   const scrollToSection = () => {
-    console.log(sectionRef)
     sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   return (
-    <div className="relative w-dvw bg-[#5F2BAA] border-t-5 border-[#F97316]">
+    <div className="relative bg-[#5F2BAA] border-t-5 border-[#F97316]">
       <img
         className="absolute w-dvw h-[40dvh] top-0 object-cover"
         src="https://img.freepik.com/fotos-premium/composicao-da-parte-inferior-de-pessoas-na-academia-correndo-na-esteira-com-fundo-laranja_1134-9081.jpg"
@@ -24,7 +23,12 @@ const App = () => {
       {/* Content Top */}
       <div className="text-white flex flex-col justify-center text-center items-center gap-5 p-10">
         <h1 className="text-4xl font-bold uppercase z-1">
-          Kit pra derrotar a sazonalidade nas academias
+          Kit pra derrotar a <br />
+          <strong style={{ fontFamily: "'Dancing Script', cursive" }}>
+            sazonalidade
+          </strong>{" "}
+          <br />
+          nas academias
         </h1>
         <p className=" z-1">
           Dicas e ferramentas para sua academia, estúdio ou box LUCRAR mesmo no
@@ -38,7 +42,7 @@ const App = () => {
         </button>
       </div>
       {/* Middle Content */}
-      <div className="relative w-dvw h-full bg-white rounded-t-2xl p-7 inset-shadow-sm inset-shadow-[#F97316]">
+      <div className="relative w-full h-full bg-white rounded-t-2xl p-7 inset-shadow-sm inset-shadow-[#F97316] flex-wrap">
         <div className="flex flex-col gap-5">
           <p>
             O frio e as férias de meio de ano estão chegando, e se você ainda
@@ -47,8 +51,8 @@ const App = () => {
           <h2 className="font-semibold text-2xl">Você não está sozinho!</h2>
           <p>
             Preparamos um Kit completo para te ajudar a não deixar o movimento
-            diminuir no seu negócio e ainda conseguir{" "}
-            <strong className="text-[#F97316]">LUCRAR </strong>
+            diminuir no seu negócio e ainda conseguir
+            <strong className="text-[#F97316]"> LUCRAR </strong>
             mais neste período.
           </p>
 
@@ -75,7 +79,7 @@ const App = () => {
             <h2 className="text-[#F97316] ">Preencha agora o formulário</h2>
             <p>a seguir e baixe o KIT!</p>
           </div>
-          <Forms sectionRef={sectionRef}/>
+          <Forms sectionRef={sectionRef} />
         </div>
       </div>
     </div>
