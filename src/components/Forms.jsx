@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 
-const Forms = () => {
+const Forms = forwardRef(({sectionRef}) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [value, setValue] = useState({
     nome: "",
@@ -12,17 +12,20 @@ const Forms = () => {
   const handleSubmit = (e) => {
     try {
       e.preventDefault();
+      setIsSubmitted(true);
     } catch (error) {}
     setIsSubmitted(true);
-    console.log(value);
   };
 
   const handleChange = (e) => {
     setValue({ ...value, [e.target.id]: e.target.value });
   };
-
+  console.log(sectionRef)
   return (
-    <div className="border-3 border-[#F97316] bg-[#5F2BAA] rounded-xl mb-4">
+    <div
+      ref={sectionRef}
+      className="border-3 border-[#F97316] bg-[#5F2BAA] rounded-xl mb-4"
+    >
       <div className="p-8 text-center">
         <h2 className="text-white font-normal text-2xl">
           Preencha o formulário para receber o Kit
@@ -75,10 +78,10 @@ const Forms = () => {
             }`}
             type="tel"
             id="tel"
-            pattern="\d{2}\s\d{5}\s\d{4}"
+            pattern="[0-9]{2} [0-9]{5} [0-9]{4}"
             maxLength={13}
             placeholder="12 34567 8910"
-            value={value.telefone}
+            value={value.tel}
             onChange={handleChange}
             required
           />
@@ -113,6 +116,6 @@ const Forms = () => {
       </form>
     </div>
   );
-};
+});
 
 export default Forms;

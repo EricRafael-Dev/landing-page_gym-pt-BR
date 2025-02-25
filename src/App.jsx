@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import Forms from "./components/forms";
 import { CheckCircle } from "lucide-react";
 
 const App = () => {
+  const sectionRef = useRef(null);
+
+  const scrollToSection = () => {
+    console.log(sectionRef)
+    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   return (
     <div className="relative w-dvw bg-[#5F2BAA] border-t-5 border-[#F97316]">
       <img
@@ -23,7 +30,10 @@ const App = () => {
           Dicas e ferramentas para sua academia, estúdio ou box LUCRAR mesmo no
           período de baixa.
         </p>
-        <button className="uppercase bg-[#F97316] w-[160px] h-[40px] rounded-lg z-1">
+        <button
+          onClick={scrollToSection}
+          className="uppercase bg-[#F97316] w-[160px] h-[40px] rounded-lg z-1"
+        >
           Baixe agora!
         </button>
       </div>
@@ -65,7 +75,7 @@ const App = () => {
             <h2 className="text-[#F97316] ">Preencha agora o formulário</h2>
             <p>a seguir e baixe o KIT!</p>
           </div>
-          <Forms />
+          <Forms sectionRef={sectionRef}/>
         </div>
       </div>
     </div>
