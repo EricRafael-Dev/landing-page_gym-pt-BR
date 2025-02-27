@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Forms from "./components/forms";
+import Forms from "./components/Forms";
 import { CheckCircle } from "lucide-react";
 
 const App = () => {
